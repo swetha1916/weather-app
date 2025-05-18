@@ -47,6 +47,13 @@ function App() {
     }
   }
 
+  const [isCelsius, setIsCelsius] = useState(true);
+
+  const toggleUnit = () => {
+    setIsCelsius(prev => !prev);
+  };
+
+  
   return (
     <div className="app"> 
         <main>
@@ -77,10 +84,27 @@ function App() {
               <div className="weather-box">
                 <div className="weather-content">
                   <h2> {weather.name}, {weather.sys.country}</h2>
-                  <p>Feels like {Math.round(weather.main.feels_like)}°C</p>
+                  <p>
+                    {isCelsius 
+                      ? `Feels like ${Math.round(weather.main.feels_like)}°C` 
+                      : `Feels like ${Math.round((weather.main.feels_like * 9/5) + 32)}°F`}
+                  </p>
                   <p>{getWeatherIcon(Math.round(weather.main.feels_like))}</p>
-                  <h1>{Math.round(weather.main.temp)}°C</h1>
-                  <p>Low: {Math.round(weather.main.temp_min)}°C | High: {Math.round(weather.main.temp_max)}°C</p>
+
+                  <h1>
+                    {isCelsius 
+                      ? `${Math.round(weather.main.temp)}°C` 
+                      : `${Math.round((weather.main.temp * 9/5) + 32)}°F`}
+                    <button className="toggle-btn" onClick={toggleUnit}>
+                      {isCelsius ? "Switch to °F" : "Switch to °C"}
+                    </button>
+                  </h1>
+
+                  <p>
+                    {isCelsius 
+                      ? `Low: ${Math.round(weather.main.temp_min)}°C | High: ${Math.round(weather.main.temp_max)}°C` 
+                      : `Low: ${Math.round((weather.main.temp_min * 9/5) + 32)}°F | High: ${Math.round((weather.main.temp_max * 9/5) + 32)}°F`}
+                  </p>
                   <p>Wind Speed: {Math.round(weather.wind.speed * 3.6)} km/h</p>
                 </div>
               </div>
