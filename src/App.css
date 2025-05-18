@@ -1,0 +1,96 @@
+.app {
+  background-image: url("./Assets/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+}
+
+main {
+  min-height: 100vh;
+}
+
+.todaysDate {
+  text-align: center;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.titleText {
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.991);
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgb(15, 0, 0);
+}
+
+.searchBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar {
+  width: 30%;
+  height: 50px;
+  border: 1px solid rgb(14, 0, 0);
+  border-radius: 25px; 
+  padding-left: 20px;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: rgb(220, 241, 241);
+}
+
+.searchBar:focus {
+  outline: none;
+  border: 1px solid rgb(19, 19, 19);
+  background-color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.weather-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(255, 250, 250);
+  width: 200px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  box-shadow: 2px 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.weather-content {
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.weather-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-style: italic;
+  color: rgb(96, 96, 133);
+}
+
+.weather-content h1 {
+  font-size: 4rem;
+  margin: 10px 0;
+  text-shadow: 1px 1px 1px rgb(99, 93, 93);
+}
+
+.weather-content p {
+  margin: 5px 0;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.weather-icon {
+  width: 60px;
+  height: 60px;
+  margin: 10px auto;
+  display: block;
+}
